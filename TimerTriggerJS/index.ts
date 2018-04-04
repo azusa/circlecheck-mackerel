@@ -1,15 +1,13 @@
 
 const client = require('cheerio-httpcli')
-//const dotenv = require('dotenv')
 const tough = require('tough-cookie')
 const rp = require('request-promise')
 
-//dotenv.config()
-const email = process.env.EMAIL
-const password = process.env.PASSWORD
+const email = process.env["EMAIL"]
+const password = process.env["PASSWORD"]
 const webhook = process.env.SLACK_WEBHOOK
 const channel = process.env.SLACK_CHANNEL
-const apiKey = process.env.MACKREL_API_KEY
+const apiKey = process.env["MACKREL_API_KEY"]
 
 export async function run (context: any, mytimer: any) {
   const checkedCount = await sendCheckedcountToSlack()

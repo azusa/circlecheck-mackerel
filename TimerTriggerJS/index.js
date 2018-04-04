@@ -37,15 +37,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 exports.__esModule = true;
 var client = require('cheerio-httpcli');
-//const dotenv = require('dotenv')
 var tough = require('tough-cookie');
 var rp = require('request-promise');
-//dotenv.config()
-var email = process.env.EMAIL;
-var password = process.env.PASSWORD;
+var email = process.env["EMAIL"];
+var password = process.env["PASSWORD"];
 var webhook = process.env.SLACK_WEBHOOK;
 var channel = process.env.SLACK_CHANNEL;
-var apiKey = process.env.MACKREL_API_KEY;
+var apiKey = process.env["MACKREL_API_KEY"];
 function run(context, mytimer) {
     return __awaiter(this, void 0, void 0, function () {
         var checkedCount;
