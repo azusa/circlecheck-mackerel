@@ -59,7 +59,7 @@ const crawl = async () => {
 const sendToMackerel = async checkedCount => {
     const opt = {
         method: 'POST',
-        uri: 'https://api.mackerelio.com//api/v0/services/techbookfest/tsdb',
+        uri: 'https://api.mackerelio.com/api/v0/services/techbookfest/tsdb',
         body: JSON.stringify([{ name: "circleCheck", time: Math.floor(new Date().getTime() / 1000), value: checkedCount }]),
         headers: {
           'content-type': 'application/json',
