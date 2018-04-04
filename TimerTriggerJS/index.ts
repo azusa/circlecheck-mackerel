@@ -11,6 +11,12 @@ const webhook = process.env.SLACK_WEBHOOK
 const channel = process.env.SLACK_CHANNEL
 const apiKey = process.env.MACKREL_API_KEY
 
+export async function run (context: any, mytimer: any) {
+  const checkedCount = await sendCheckedcountToSlack()
+  console.log(new Date().toLocaleString(), checkedCount)
+  context.done();
+};
+
 const fetchCheckedCount = async userToken => {
   const cookie = new tough.Cookie({
     key: 'user',
