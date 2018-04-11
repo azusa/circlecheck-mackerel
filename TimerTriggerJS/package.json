@@ -16,8 +16,10 @@
   },
   "dependencies": {
     "cheerio-httpcli": "^0.7.2",
-    "dotenv": "^5.0.1",
     "request-promise": "^4.2.2",
     "tough-cookie": "^2.3.4"
+  },
+  "scripts": {
+    "postinstall": "tsc"
   }
 }
