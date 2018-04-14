@@ -24,6 +24,8 @@ project.lock.json
 appsettings.json
 local.settings.json
 
+functions-extensions\
+
 node_modules
 *.js
 *.js.map
