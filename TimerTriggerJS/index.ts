@@ -3,11 +3,9 @@ const client = require('cheerio-httpcli')
 const tough = require('tough-cookie')
 const rp = require('request-promise')
 
-const email = process.env["EMAIL"]
-const password = process.env["PASSWORD"]
-const webhook = process.env.SLACK_WEBHOOK
-const channel = process.env.SLACK_CHANNEL
-const apiKey = process.env["MACKREL_API_KEY"]
+const email = process.env.EMAIL
+const password = process.env.PASSWORD
+const apiKey = process.env.MACKREL_API_KEY
 
 export async function run (context: any, mytimer: any) {
   const checkedCount = await sendCheckedcountToSlack()
@@ -69,24 +67,9 @@ const sendToMackerel = async checkedCount => {
       }
     await rp(opt)
 }
-
-const sendToSlack = async message => {
-    const opt = {
-      method: 'POST',
-      uri: webhook,
-      json: {
-        channel,
-        text: message
-      }
-    }
-    await rp(opt)
-  }
-  
   
 const sendCheckedcountToSlack = async () => {
   const checkedCount = await crawl()
-  //await sendToSlack(`被サークルチェック数: ${checkedCount}`)
-  await sendToMackerel(checkedCount)
-  
+  await sendToMackerel(checkedCount)  
   return checkedCount
 }
