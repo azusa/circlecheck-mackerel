@@ -8,7 +8,7 @@ const password = process.env.PASSWORD
 const apiKey = process.env.MACKREL_API_KEY
 
 export async function run (context: any, mytimer: any) {
-  const checkedCount = await sendCheckedcountToSlack()
+  const checkedCount = await sendCheckedcountToMackerel()
   console.log(new Date().toLocaleString(), checkedCount)
   context.done();
 };
@@ -68,7 +68,7 @@ const sendToMackerel = async checkedCount => {
     await rp(opt)
 }
   
-const sendCheckedcountToSlack = async () => {
+const sendCheckedcountToMackerel = async () => {
   const checkedCount = await crawl()
   await sendToMackerel(checkedCount)  
   return checkedCount
