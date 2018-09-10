@@ -27,7 +27,7 @@ const fetchCheckedCount = async userToken => {
     jar
   }
   const circles = JSON.parse(await rp(opt))
-  const checkedCount = circles.filter(circle => circle.event.id === 'tbf04').map(circle => circle.checkedCount)[0]
+  const checkedCount = circles.filter(circle => circle.event.id === 'tbf05').map(circle => circle.checkedCount)[0]
   return checkedCount
 }
 
@@ -58,7 +58,7 @@ const sendToMackerel = async checkedCount => {
     const opt = {
         method: 'POST',
         uri: 'https://api.mackerelio.com/api/v0/services/techbookfest/tsdb',
-        body: JSON.stringify([{ name: "circleCheck", time: Math.floor(new Date().getTime() / 1000), value: checkedCount }]),
+        body: JSON.stringify([{ name: "circleCheck5", time: Math.floor(new Date().getTime() / 1000), value: checkedCount }]),
         headers: {
           'content-type': 'application/json',
           'X-Api-Key': apiKey
