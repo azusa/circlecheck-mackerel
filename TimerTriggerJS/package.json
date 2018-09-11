@@ -20,6 +20,6 @@
     "tough-cookie": "^2.3.4"
   },
   "scripts": {
-    "postinstall": "npm install -g typescript && tsc"
+    "postinstall": "node_modules/.bin/tsc"
   }
 }
