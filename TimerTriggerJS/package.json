@@ -21,6 +21,6 @@
     "typescript": "^3.2.2"
   },
   "scripts": {
-    "postinstall": ".\\node_modules\\.bin\\tsc"
+    "postinstall": "tsc"
   }
 }
