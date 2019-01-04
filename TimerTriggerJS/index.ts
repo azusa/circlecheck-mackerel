@@ -14,13 +14,14 @@ export async function run (context: any, mytimer: any) {
 };
 
 const fetchCheckedCount = async userToken => {
-  const cookie = new tough.Cookie({
+  const cookie = new tough.CookieJar({
     key: 'user',
     value: userToken,
     path: '/',
     domain: 'techbookfest.org'
   })
   const jar = rp.jar()
+  jar._jar = cookie;
   jar.setCookie(cookie, 'https://techbookfest.org')
   const opt = {
     url: 'https://techbookfest.org/api/circle/own',
