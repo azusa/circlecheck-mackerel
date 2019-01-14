@@ -5,8 +5,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/dotenv": "^4.0.2",
-    "@types/request-promise": "^4.2.2",
-    "@types/tough-cookie": "^2.5.0",
+    "@types/request-promise": "^4.1.41",
+    "@types/tough-cookie": "^2.3.4",
     "prettier": "^1.15.3",
     "ts-node": "^5.0.1",
     "tslint": "^5.12.0",
