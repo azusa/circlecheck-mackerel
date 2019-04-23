@@ -1,4 +1,3 @@
-import { Cookie } from "tough-cookie";
 
 const client = require('cheerio-httpcli')
 const tough = require('tough-cookie')
@@ -15,7 +14,7 @@ export async function run (context: any, mytimer: any) {
 };
 
 const fetchCheckedCount = async userToken => {
-  const cookie : Cookie =  new tough.Cookie({
+  const cookie = new tough.Cookie({
       key: 'user',
       value: userToken,
       path: '/',
@@ -23,7 +22,7 @@ const fetchCheckedCount = async userToken => {
   })
   cookie.domain = 'techbookfest.org';
   var cookiejar = new tough.CookieJar();
-  cookiejar.setCookie(cookie, 'https://techbookfest.org')
+  cookiejar.setCookie(cookie, 'https://techbookfest.org', (err,cookie) => {})
   const opt = {
     url: 'https://techbookfest.org/api/circle/own',
     cookiejar
