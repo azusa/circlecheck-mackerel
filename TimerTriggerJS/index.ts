@@ -20,11 +20,11 @@ const fetchCheckedCount = async userToken => {
     path: '/',
     domain: 'techbookfest.org'
   })
-  const jar = rp.jar()
-  jar.setCookie(cookie, 'https://techbookfest.org')
+  var cookiejar = new tough.CookieJar();
+  cookiejar.setCookie(cookie, 'https://techbookfest.org')
   const opt = {
     url: 'https://techbookfest.org/api/circle/own',
-    jar
+    cookiejar
   }
   const circles = JSON.parse(await rp(opt))
   const checkedCount = circles.filter(circle => circle.event.id === 'tbf05').map(circle => circle.checkedCount)[0]
