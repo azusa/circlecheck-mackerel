@@ -14,7 +14,7 @@ export async function run (context: any, mytimer: any) {
 };
 
 const fetchCheckedCount = async userToken => {
-  const cookie = new tough.Cookie({
+  const cookie = tough.Cookie.parse({
       key: 'user',
       value: userToken,
       path: '/',
