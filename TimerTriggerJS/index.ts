@@ -14,12 +14,11 @@ export async function run (context: any, mytimer: any) {
 };
 
 const fetchCheckedCount = async userToken => {
-  const cookie = new tough.Cookie({
-    key: 'user',
-    value: userToken,
-    path: '/',
-    domain: 'techbookfest.org'
-  })
+  const cookie =  tough.Cookie;
+  cookie.key = 'user';
+  cookie.value = userToken,
+  cookie.path = '/';
+  cookie.domain = 'techbookfest.org';
   var cookiejar = new tough.CookieJar();
   cookiejar.setCookie(cookie, 'https://techbookfest.org')
   const opt = {
