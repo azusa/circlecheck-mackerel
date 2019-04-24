@@ -8,5 +8,5 @@
       "schedule": "0 10 * * * *"
     }
   ],
-  "scriptFile": "..\\dist\\TimerTriggerJS\\index.js"
+  "scriptFile": "..\\dist\\TimerTrigger\\index.js"
 }
