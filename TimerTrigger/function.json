@@ -1,12 +1,11 @@
 {
-  "disabled": false,
   "bindings": [
     {
-      "name": "myTimer",
+      "name": "mackerelTimer",
       "type": "timerTrigger",
       "direction": "in",
       "schedule": "0 10 * * * *"
     }
   ],
-  "scriptFile": "..\\dist\\TimerTrigger\\index.js"
+  "scriptFile": "../dist/TimerTrigger/index.js"
 }
